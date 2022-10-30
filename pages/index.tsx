@@ -1,34 +1,54 @@
 import Head from "next/head";
 import ProfileCard from "../components/ProfileCard";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Advocates } from "../types/advocates";
 import { useRouter } from "next/router";
+import Pagination from "../components/Pagination";
+import { getAdvocates } from "../service/advocates.api";
+import useCacheResponse from "../hooks/useCacheResponse";
 
 export default function Home() {
   const [advocates, setAdvocates] = useState<any>({}); // object coming from the API
   const [currentUser, setCurrentUser] = useState<string | string[] | undefined>(undefined);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [getFromCache, saveToCache] = useCacheResponse();
   const router = useRouter();
 
   useEffect(() => {
     setCurrentUser(router?.query?.username);
   }, [router?.query?.username]);
 
+  const getAndSaveAdvocates = async (pageNo: number) => {
+    try {
+      setLoading(true);
+      let response: any = {};
+      if (!getFromCache(pageNo)) {
+        response = await getAdvocates(pageNo);
+        saveToCache(pageNo, response);
+      } else {
+        response = getFromCache(pageNo);
+      }
+      setAdvocates(response);
+    } catch (err: unknown) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect((): void => {
     const getInfo = async (): Promise<any> => {
-      try {
-        const response: any = await axios.get("https://cados.up.railway.app/advocates/");
-        setAdvocates(response.data);
-        console.log(response.data);
-      } catch (err: unknown) {
-        console.log(err);
-      }
+      return await getAndSaveAdvocates(1);
     };
     getInfo();
   }, []);
 
+  const handlePageChange = async (pageNo: number): Promise<any> => {
+    return await getAndSaveAdvocates(pageNo);
+  };
+
   const handleChangeUser = (e: any): void => {
-    setCurrentUser((e.target as HTMLInputElement).value);
+    return setCurrentUser((e.target as HTMLInputElement).value);
   };
 
   return (
@@ -43,7 +63,7 @@ export default function Home() {
           <div className='mt-12'>
             <input
               type='search'
-              value={currentUser ?? ''}
+              value={currentUser ?? ""}
               onChange={handleChangeUser}
               placeholder='Search name...'
               className='md:w-96 w-full py-2 px-3 text-lg rounded-md shadow-md outline-none border-2 border-slate-400 focus:border-blue-500'
@@ -56,6 +76,11 @@ export default function Home() {
             return <ProfileCard key={idx} advocate={advocate} />;
           })}
         </div>
+        {!loading && advocates?.pagination && (
+          <div className='flex justify-center'>
+            <Pagination {...advocates?.pagination} handlePageChange={handlePageChange} />
+          </div>
+        )}
       </div>
     </div>
   );
