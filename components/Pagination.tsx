@@ -23,9 +23,9 @@ const Pagination = (props: Props) => {
     handlePageChange,
   } = props;
 
-  const handlePageClick = (page: number): void => {
-    if (page === current_page) return;
-    handlePageChange(page);
+  const handlePageClick = (page: number | boolean): void => {
+    if (page === current_page || !page) return;
+    if (typeof page === "number") return handlePageChange(page);
   };
 
   const nextPageClassName =
@@ -37,7 +37,9 @@ const Pagination = (props: Props) => {
   return (
     <div className='my-4'>
       <ul className='decoration-none flex gap-x-0 text-blue-800'>
-        <li className={prevPageClassName}>Previous</li>
+        <li onClick={handlePageClick.bind(null, prev_page)} className={prevPageClassName}>
+          Previous
+        </li>
         {pages?.map((page) => (
           <li
             key={page}
@@ -47,7 +49,9 @@ const Pagination = (props: Props) => {
             {page}
           </li>
         ))}
-        <li className={nextPageClassName}>Next</li>
+        <li onClick={handlePageClick.bind(null, next_page)} className={nextPageClassName}>
+          Next
+        </li>
       </ul>
     </div>
   );
