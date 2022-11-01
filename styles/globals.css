@@ -28,6 +28,12 @@ a {
   }
   body {
     color: white;
-    background: black;
+    /* background: linear-gradient(to right,  #852015,  #1F1C18); */
+    background: url('../images/back-new.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+
   }
 }

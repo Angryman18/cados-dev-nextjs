@@ -19,26 +19,36 @@ const ProfileCard = ({ advocate }: Props) => {
   return (
     <div
       onClick={handleCardClick.bind(null, advocate)}
-      className='p-2 px-4 m-2 cursor-pointer hover:scale-110 hover:shadow-xl text-white duration-150 bg-gradient-to-r from-blue-600 to-cyan-300  md:w-96 w-full shadow-md rounded-xl'
+      className="p-3 px-4 m-2 cursor-pointer hover:scale-105 hover:shadow-xl text-white duration-150 backdrop-blur-2xl  md:w-96 w-full shadow-2xl shadow-[#000000] rounded-xl "
     >
-      <div className='flex flex-row gap-x-4 items-center'>
-        <img
-          src={advocate.profile_pic}
-          alt='profilePic'
-          className='w-16 h-16 border-2 border-white rounded-full'
-        />
-        <div className=''>
-          <span className='block font-bold text-lg'>{advocate.name}</span>
-          <span className='bg-[#444444] text-x px-2.5 py-0.5 text-sm bg-opacity-50 text-white shadow-md rounded-lg'>
+      <div className="flex flex-col  items-center justify-center space-y-5">
+        <div className="border rounded-full p-3.5 border-gray-500 hover:border-gray-100">
+          <img
+            src={advocate.profile_pic}
+            alt="profilePic"
+            className="w-16 h-16 border-2 border-white rounded-full"
+          />
+        </div>
+        <div className="flex flex-col space-y-3 justify-center items-center">
+          <span className="block font-bold text-md">{advocate.name}</span>
+          <span className="bg-[#444444] text-x px-2.5 py-0.5 text-sm bg-opacity-50 text-white shadow-md rounded-lg">
             {advocate.username}
           </span>
         </div>
       </div>
-      <hr className='my-4 border border-slate-300' />
-      <div>{advocate.bio}</div>
-      <div className='my-2 flex gap-x-2 items-center'>
-        <Image src={twitterIcon} className='w-8 h-8 drop-shadow' alt='twitter' />
-        <span className='font-semibold'>{counter(advocate.follower_count)}</span>
+      {/* <hr className="my-4 border border-slate-300" /> */}
+      <div className="flex flex-col justify-center items-center space-y-6 mt-5">
+      <div className="flex text-center text-gray-300  hover:text-white">{advocate.bio}</div>
+      <div className="my-2 flex gap-x-2 items-center">
+        <Image
+          src={twitterIcon}
+          className="w-8 h-8 drop-shadow"
+          alt="twitter"
+        />
+        <span className="font-semibold">
+          {counter(advocate.follower_count)}
+        </span>
+      </div>
       </div>
     </div>
   );
