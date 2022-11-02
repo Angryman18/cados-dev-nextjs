@@ -1,5 +1,6 @@
 import axios from "axios";
 const backendURL: string = "https://cados.up.railway.app/advocates/";
+const advocateurl: string ='https://cados.up.railway.app/advocates/'
 
 export const getAdvocates = async (page: number): Promise<any> => {
   try {
