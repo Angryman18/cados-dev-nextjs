@@ -52,7 +52,7 @@ const Advocate = () => {
                   data-tippy-content="@twitter_handle"
                 >
                   <svg
-                    className="h-6 fill-current text-gray-600 hover:text-blue-900"
+                    className="h-6 fill-current text-gray-600 hover:text-[#1da1f2]"
                     role="img"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
@@ -73,10 +73,6 @@ const Advocate = () => {
               width={500}
               height={500}
             />
-          </div>
-
-          <div className="absolute top-0 right-0 h-12 w-18 p-4">
-            <button className="js-change-theme focus:outline-none">🌙</button>
           </div>
         </div>
       ) : (
