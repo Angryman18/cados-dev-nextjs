@@ -28,7 +28,7 @@ a {
   }
   body {
     color: white;
-    background: url('../images/back-new.jpg');
+    background: url('../assets/back-new.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
