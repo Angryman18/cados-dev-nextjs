@@ -19,7 +19,6 @@ const Advocate = () => {
     getInfo();
   }, []);
 
-  console.log(user);
   return (
     <>
       {user ? (
@@ -43,7 +42,9 @@ const Advocate = () => {
                 <h2>{millify(user.advocate.follower_count)}</h2>
               </p>
               <p className="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"></p>
-              <p className="pt-8 text-sm text-gray-300 hover:text-white">{user.advocate.bio}</p>
+              <p className="pt-8 text-sm text-gray-300 hover:text-white">
+                {user.advocate.bio}
+              </p>
 
               <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
                 <a
@@ -76,7 +77,7 @@ const Advocate = () => {
           </div>
         </div>
       ) : (
-        <p>hey</p>
+        <p>loading...</p>
       )}
     </>
   );
