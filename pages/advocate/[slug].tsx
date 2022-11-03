@@ -49,7 +49,7 @@ const Advocate = () => {
               <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
                 <a
                   className="link"
-                  href="#"
+                  href={user.advocate.twitter}
                   data-tippy-content="@twitter_handle"
                 >
                   <svg
