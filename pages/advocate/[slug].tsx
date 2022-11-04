@@ -27,7 +27,9 @@ const Advocate = () => {
             className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl backdrop-blur-3xl shadow-[#000] opacity-75 mx-6 lg:mx-0 hover:scale-105 cursor-pointer"
           >
             <div className="p-4 md:p-12 text-center lg:text-left">
-              <div className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"></div>
+              <div className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center">
+                <Image alt="profile_pic" src={user.advocate.profile_pic} className="rounded-2xl" height={400} width={400}/>
+              </div>
 
               <p className="text-3xl font-bold pt-8 lg:pt-0">
                 {user.advocate.name}
