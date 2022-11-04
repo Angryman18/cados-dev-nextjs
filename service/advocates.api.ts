@@ -9,3 +9,12 @@ export const getAdvocates = async (page: number): Promise<any> => {
     return Promise.reject(err);
   }
 };
+
+export const getAdvocate = async (username: string | string[] | undefined): Promise<any> => {
+  try {
+    const response: any = await axios.get(`${backendURL}${username}`);
+    return response.data;
+  } catch (err: any) {
+    return Promise.reject(err.response.data);
+  }
+};

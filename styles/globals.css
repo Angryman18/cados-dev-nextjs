@@ -28,6 +28,10 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: url('../assets/back-new.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
   }
 }

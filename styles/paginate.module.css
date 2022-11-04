@@ -2,13 +2,13 @@
 
 
 .page-link {
-  @apply border border-blue-400  p-0.5 px-3 cursor-pointer
+  @apply  p-2 cursor-pointer bg-gray-800 
 }
 
 .page-disabled {
-  @apply border-gray-500 text-gray-500
+  @apply  text-gray-500
 }
 
 .page-active {
-  @apply bg-blue-400 text-white
+  @apply bg-gray-700 text-white
 }
