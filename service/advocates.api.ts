@@ -15,7 +15,6 @@ export const getAdvocate = async (username: string | string[] | undefined): Prom
     const response: any = await axios.get(`${backendURL}${username}`);
     return response.data;
   } catch (err: any) {
-    // return Promise.reject(err.response.data);
-    console.log(err)
+    return Promise.reject(err.response.data);
   }
 };

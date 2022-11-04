@@ -29,17 +29,17 @@ const Advocate = () => {
             <div className="p-4 md:p-12 text-center lg:text-left">
               <div className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"></div>
 
-              <h1 className="text-3xl font-bold pt-8 lg:pt-0">
+              <p className="text-3xl font-bold pt-8 lg:pt-0">
                 {user.advocate.name}
-              </h1>
-              <h3 className="text-md font-bold pt-8 lg:pt-0">
-                @{user.advocate.username}
-              </h3>
-              <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
-              <p className="pt-4 text-base font-bold  items-center  lg:justify-start flex space-x-1">
-                <h1>Followers:</h1>
-                <h2>{millify(user.advocate.follower_count)}</h2>
               </p>
+              <p className="text-md font-bold pt-8 lg:pt-0">
+                @{user.advocate.username}
+              </p>
+              <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
+              <div className="pt-4 text-base font-bold  items-center  lg:justify-start flex space-x-1">
+                <p>Followers:</p>
+                <p>{millify(user.advocate.follower_count)}</p>
+              </div>
               <p className="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start"></p>
               <p className="pt-8 text-sm text-gray-300 hover:text-white">
                 {user.advocate.bio}
@@ -67,7 +67,7 @@ const Advocate = () => {
 
           <div className="w-full lg:w-2/5">
             <Image
-              alt=""
+              alt="profile_pic"
               src={user.advocate.profile_pic}
               className="rounded-none lg:rounded-lg shadow-2xl hidden lg:block w-full h-[400px]"
               width={500}
