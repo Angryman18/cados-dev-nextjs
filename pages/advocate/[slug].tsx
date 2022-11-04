@@ -1,9 +1,8 @@
-import axios from "axios";
 import millify from "millify";
-import { requestToBodyStream } from "next/dist/server/body-streams";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import Spinner from "../../components/Spinner";
 import { getAdvocate } from "../../service/advocates.api";
 
 const Advocate = () => {
@@ -17,7 +16,7 @@ const Advocate = () => {
       setuser(result);
     };
     getInfo();
-  }, []);
+  }, [slug]);
 
   return (
     <>
@@ -77,7 +76,9 @@ const Advocate = () => {
           </div>
         </div>
       ) : (
-        <p>loading...</p>
+        <div className=" h-screen flex justify-center items-center ">
+          <Spinner />
+        </div>
       )}
     </>
   );

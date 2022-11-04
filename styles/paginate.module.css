@@ -2,7 +2,7 @@
 
 
 .page-link {
-  @apply  p-3 cursor-pointer bg-gray-800
+  @apply  p-2 cursor-pointer bg-gray-800 
 }
 
 .page-disabled {

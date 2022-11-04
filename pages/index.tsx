@@ -73,7 +73,7 @@ export default function Home() {
 
         <div className='flex flex-wrap justify-center sm:p-5'>
           {advocates?.advocates?.map((advocate: Advocates, idx: number) => {
-            return <ProfileCard key={idx} advocate={advocate} />;
+            return <ProfileCard key={idx} advocate={advocate} />
           })}
         </div>
         {!loading && advocates?.pagination && (

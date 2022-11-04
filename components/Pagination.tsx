@@ -44,7 +44,7 @@ const Pagination = (props: Props) => {
         <a
           onClick={handlePageClick.bind(null, prev_page)}
           href="#"
-          className="block p-4 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg   hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          className="block p-2 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg   hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
         >
           <span className="sr-only">Previous</span>
           <svg
@@ -78,7 +78,7 @@ const Pagination = (props: Props) => {
         >
           <a
             href="#"
-            className="block p-4 leading-tight text-gray-500 bg-white rounded-r-lg   hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800  dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className="block p-2.5 leading-tight text-gray-500 bg-white rounded-r-lg   hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800  dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <span className="sr-only">Next</span>
             <svg
