@@ -1,7 +1,7 @@
 const useCounter = (): Function[] => {
   const counter = (val: number): string => {
-    const strVal: string = val.toString();
-    const strLeng: number = strVal.length;
+    const strVal: string = val?.toString();
+    const strLeng: number = strVal?.length;
 
     if (strLeng >= 4) {
       const remainingStr: string = strVal.slice(0, -3);
@@ -10,7 +10,7 @@ const useCounter = (): Function[] => {
       const remainingStr: string = strVal.slice(0, -6);
       return remainingStr + "M";
     }
-    return strVal.toString();
+    return strVal?.toString();
   };
   return [counter];
 };
