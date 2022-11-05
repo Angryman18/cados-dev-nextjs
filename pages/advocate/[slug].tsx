@@ -56,6 +56,7 @@ const Advocate = () => {
                   href={user.advocate.twitter}
                   data-tippy-content='@twitter_handle'
                   target='_blank'
+                  rel="noreferrer"
                 >
                   <svg
                     className='h-6 fill-current text-gray-600 hover:text-[#1da1f2]'
