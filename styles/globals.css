@@ -7,10 +7,11 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Oxygen', sans-serif;
-
+  color: white;
+  background: url('../assets/back-new.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a {
@@ -25,13 +26,5 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: url('../assets/back-new.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
   }
 }

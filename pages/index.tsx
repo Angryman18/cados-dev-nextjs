@@ -66,7 +66,7 @@ export default function Home() {
               value={currentUser ?? ""}
               onChange={handleChangeUser}
               placeholder='Search name...'
-              className='md:w-96 w-full py-2 px-3 text-lg rounded-md shadow-md outline-none border-2 border-slate-400 focus:border-blue-500'
+              className='md:w-96 w-full py-2 px-3 text-lg rounded-md shadow-md outline-none border-2 border-slate-400 focus:border-blue-500 bg-gray-800'
             />
           </div>
         </div>
